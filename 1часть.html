@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый запуск</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <!-- 1 урок 1 часть -->
+    <div id="app">
+        <!-- Вот как мы можем визуализировать динамический текст на основе значения title -->
+        <h1>{{title}}</h1>
+    </div>
+
+    <script>
+        // Создание основного компонента веб приложения  
+        const app = {
+            // Метод data() должен всегда возвращать объект который будет содеражть в себе состояние компонента
+            data() {
+                return {
+                    // Свойство title будет доступен в шаблоне при выводе
+                    title: 'Vue init',
+                }
+            }
+        }
+        // У объекта Vue вызывается метод createApp в кторый всегда погружается основной компонент приложения, после вызывается метод mount в который передаётся шаблон приложения
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
+
+</html>
