@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <!-- 1 урок 3 часть События -->
+
+    <div id="app">
+        <!-- Директива v-on - создание событий на элементы -->
+        <h2 v-on:click="clickEvent">{{title}}</h2>
+        <button @click="clickEvent">Click</button>
+
+        <div class="form">
+            <input :type="view ? 'text' : 'password'"> <button @click="view = !view">Показать пароль</button>
+        </div>
+    </div>
+    <script>
+        const app = {
+            data() {
+                return {
+                    title: 'События',
+                    classTitle: 'red',
+                    view: false,
+                }
+            },
+            methods: {
+                clickEvent() {
+                    console.log("Click EVENT");
+                }
+            }
+        }
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
+
+</html>

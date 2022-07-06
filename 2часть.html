@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Директива</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 урок 2 часть Директива -->
+
+    <div id="app">
+        <!-- В Vue чтобы привязать атрибут к динамическому значению, мы используем v-bind директиву: -->
+        <!-- Директива — это специальный атрибут, начинающийся с v-префикса. Они являются частью синтаксиса шаблонов Vue. -->
+        <!-- Директива v-bind - создание динамических аттрибуттов -->
+        <h2 v-bind:class="classTitle">{{title}}</h2>
+        <h2 :class="classTitle">{{title}}</h2>
+        <h2 :id="classTitle">{{title}}</h2>
+
+    </div>
+    <script>
+        const app = {
+            data() {
+                return {
+                    title: 'Директива',
+                    classTitle: 'red'
+                }
+            }
+        }
+        Vue.createApp(app).mount('#app')
+    </script>
+</body>
+
+</html>
